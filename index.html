@@ -5,93 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chessboard</title>
+
+    <style>
+        div#chessboard {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.125rem;
+
+            border: 1px solid gray;
+            padding: 0.125rem;
+
+            --size: 1.685rem;
+            --odd-color: white;
+            --even-color: black;
+
+            &>div {
+                display: flex;
+                flex-direction: row;
+                gap: 0.125rem;
+
+                &:nth-child(odd) {
+                    --child-odd-color: var(--odd-color);
+                    --child-even-color: var(--even-color);
+                }
+
+                &:nth-child(even) {
+                    --child-odd-color: var(--even-color);
+                    --child-even-color: var(var(--odd-color))
+                }
+
+                &>div {
+                    width: var(--size);
+                    height: var(--size);
+                    border: 1px solid black;
+
+                    &:nth-child(odd) {
+                        background-color: var(--child-odd-color);
+                    }
+
+                    &:nth-child(even) {
+                        background-color: var(--child-even-color);
+                    }
+                }
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <table border="1">
-        <tbody>
-            <tr>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-            </tr>
-            <tr>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-                <td width="25" height="25" bgcolor="black"></td>
-                <td width="25" height="25" bgcolor="white"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="chessboard">
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
 </body>
 
 </html>
