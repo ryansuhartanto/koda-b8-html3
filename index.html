@@ -10,8 +10,12 @@
         div#chessboard {
             font-size: 0;
             display: inline-block;
-            
-            border: 1px solid gray;
+
+            border: 1px solid;
+            border-left-color: gray;
+            border-top-color: gray;
+            border-right-color: black;
+            border-bottom-color: black;
             padding-inline: 0.0625rem;
 
             --size: 1.685rem;
@@ -40,7 +44,11 @@
 
                     width: var(--size);
                     height: var(--size);
-                    border: 1px solid black;
+                    border: 1px solid;
+                    border-left-color: black;
+                    border-top-color: black;
+                    border-right-color: gray;
+                    border-bottom-color: gray;
 
                     &:nth-child(odd) {
                         background-color: var(--child-odd-color);
