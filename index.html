@@ -8,21 +8,20 @@
 
     <style>
         div#chessboard {
-            display: inline-flex;
-            flex-direction: column;
-            gap: 0.125rem;
-
+            font-size: 0;
+            display: inline-block;
+            
             border: 1px solid gray;
-            padding: 0.125rem;
+            padding-inline: 0.0625rem;
 
             --size: 1.685rem;
             --odd-color: white;
             --even-color: black;
 
             &>div {
-                display: flex;
-                flex-direction: row;
-                gap: 0.125rem;
+                display: block;
+
+                margin-block: 0.125rem;
 
                 &:nth-child(odd) {
                     --child-odd-color: var(--odd-color);
@@ -35,6 +34,10 @@
                 }
 
                 &>div {
+                    display: inline-block;
+
+                    margin-inline: 0.0625rem;
+
                     width: var(--size);
                     height: var(--size);
                     border: 1px solid black;
