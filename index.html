@@ -9,54 +9,52 @@
     <style>
         div#chessboard {
             font-size: 0;
-            display: inline-block;
+            display: grid;
+            grid-template-columns: repeat(8, var(--size));
+            grid-template-rows: repeat(8, var(--size));
+            width: fit-content;
 
             border: 1px solid;
             border-left-color: gray;
             border-top-color: gray;
             border-right-color: black;
             border-bottom-color: black;
-            padding-inline: 0.0625rem;
+            padding: 0.125rem;
+            gap: 0.125rem;
 
-            --size: 1.685rem;
+            --size: 1.8125rem;
             --odd-color: white;
             --even-color: black;
 
             &>div {
-                display: block;
+                border: 1px solid;
+                border-left-color: black;
+                border-top-color: black;
+                border-right-color: gray;
+                border-bottom-color: gray;
 
-                margin-block: 0.125rem;
+
+                --child-odd-color: var(--odd-color);
+                --child-even-color: var(--even-color);
+
+                &:nth-child(16n+9),
+                &:nth-child(16n+10),
+                &:nth-child(16n+11),
+                &:nth-child(16n+12),
+                &:nth-child(16n+13),
+                &:nth-child(16n+14),
+                &:nth-child(16n+15),
+                &:nth-child(16n) {
+                    --child-odd-color: var(--even-color);
+                    --child-even-color: var(--odd-color);
+                }
 
                 &:nth-child(odd) {
-                    --child-odd-color: var(--odd-color);
-                    --child-even-color: var(--even-color);
+                    background-color: var(--child-odd-color);
                 }
 
                 &:nth-child(even) {
-                    --child-odd-color: var(--even-color);
-                    --child-even-color: var(var(--odd-color))
-                }
-
-                &>div {
-                    display: inline-block;
-
-                    margin-inline: 0.0625rem;
-
-                    width: var(--size);
-                    height: var(--size);
-                    border: 1px solid;
-                    border-left-color: black;
-                    border-top-color: black;
-                    border-right-color: gray;
-                    border-bottom-color: gray;
-
-                    &:nth-child(odd) {
-                        background-color: var(--child-odd-color);
-                    }
-
-                    &:nth-child(even) {
-                        background-color: var(--child-even-color);
-                    }
+                    background-color: var(--child-even-color);
                 }
             }
         }
@@ -65,86 +63,70 @@
 
 <body>
     <div id="chessboard">
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 </body>
 
