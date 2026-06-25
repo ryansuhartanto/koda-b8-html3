@@ -33,10 +33,14 @@
                 border-right-color: gray;
                 border-bottom-color: gray;
 
-
+                /* default mapping: odd cells -> odd-color, even cells -> even-color */
                 --child-odd-color: var(--odd-color);
                 --child-even-color: var(--even-color);
 
+                /* 8 cells/row is even, so every row repeats the previous row's
+                parity -> a plain odd/even paint gives vertical stripes, not a
+                checker. Swap the mapping on every 2nd row (cells 9-16, 25-32,
+                41-48, 57-64) so the colors offset and the board checkers. */
                 &:nth-child(16n+9),
                 &:nth-child(16n+10),
                 &:nth-child(16n+11),
@@ -49,6 +53,7 @@
                     --child-even-color: var(--odd-color);
                 }
 
+                /* paint from the (possibly swapped) parity var */
                 &:nth-child(odd) {
                     background-color: var(--child-odd-color);
                 }
